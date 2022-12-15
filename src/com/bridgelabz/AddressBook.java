@@ -1,34 +1,36 @@
 package com.bridgelabz;
 
-public class AddressBook {
-    public String firstName;
-    public String lastName;
-    public String state;
-    public String city;
-    public String email;
-    public int zip;
-    public long phoneNumber;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-    public AddressBook(String firstName, String lastName, String state, String city, String email, int zip, long phoneNumber) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.state = state;
-        this.city = city;
-        this.email = email;
-        this.zip = zip;
-        this.phoneNumber = phoneNumber;
+public class AddressBook {
+    Scanner scanner = new Scanner(System.in);
+    ArrayList<PersonDetails> contact = new ArrayList<>();
+    PersonDetails personDetails = new PersonDetails();
+
+    public void addContact() {
+        System.out.print("First Name: ");
+        personDetails.setFirstName(scanner.next());
+        System.out.print("Last Name: ");
+        personDetails.setLastName(scanner.next());
+        System.out.print("State: ");
+        personDetails.setState(scanner.next());
+        System.out.print("City: ");
+        personDetails.setState(scanner.next());
+        System.out.print("Email: ");
+        personDetails.setEmail(scanner.next());
+        System.out.print("ZIP: ");
+        personDetails.setZip(scanner.nextInt());
+        System.out.print("Phone: ");
+        personDetails.setPhoneNumber(scanner.nextLong());
+        contact.add(personDetails);
     }
 
     @Override
     public String toString() {
         return "AddressBook{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", state='" + state + '\'' +
-                ", city='" + city + '\'' +
-                ", email='" + email + '\'' +
-                ", zip=" + zip +
-                ", phoneNumber=" + phoneNumber +
+                ", contact=" + contact +
+                ", personDetails=" + personDetails +
                 '}';
     }
 }
