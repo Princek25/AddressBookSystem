@@ -26,11 +26,27 @@ public class AddressBook {
         contact.add(personDetails);
     }
 
+    public void editContact() {
+        System.out.print("Enter Y to Edit and N to Exit: ");
+        Scanner scanner = new Scanner(System.in);
+        String option = scanner.nextLine();
+        if (option.equals("Y")) {
+            System.out.print("Enter First Name to Edit Contact: ");
+            String editName = scanner.nextLine();
+            if (editName.equals(personDetails.getFirstName())) {
+                addContact();
+            } else {
+                System.out.println("Invalid Name...!!...Please Enter Valid First Name");
+                editContact();
+            }
+        } else if (option.equals("N")) {
+        } else System.out.println("Invalid.. Enter Y and N Only");
+    }
+
     @Override
     public String toString() {
         return "AddressBook{" +
                 ", contact=" + contact +
-                ", personDetails=" + personDetails +
                 '}';
     }
 }
