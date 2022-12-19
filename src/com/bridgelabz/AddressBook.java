@@ -11,7 +11,8 @@ public class AddressBook {
     public void mainMenu() {
         boolean b = true;
         while (b) {
-            System.out.println(" Press 1 to Add Contact \n Press 2 to Edit(Add Contact First) \n Press 3 to Delete(Add Contact First) \n Press 4 to Exit");
+            System.out.println(" Press 1 to Add Contact \n Press 2 to Edit Contact(Add Contact First)");
+            System.out.println(" Press 3 to Delete Contact(Add Contact First) \n Press 4 to Add Multiple Contact \n Press 5 to Exit");
             int option = scanner.nextInt();
             scanner.nextLine();
             switch (option) {
@@ -25,6 +26,9 @@ public class AddressBook {
                     deleteContact();
                     break;
                 case 4:
+                    addMultipleContact();
+                    break;
+                case 5:
                     b = false;
                     break;
                 default:
@@ -77,8 +81,15 @@ public class AddressBook {
         if (editName.equals(personDetails.getFirstName())) {
             System.out.println("Deleted " + personDetails.getFirstName() + " Contact Successfully");
             personDetails = null;
+        } else System.out.println("Input does not match..");
+    }
+
+    public void addMultipleContact() {
+        System.out.print("Enter Number of Contact to Add: ");
+        int num = scanner.nextInt();
+        for (int i = 1; i <= num; i++) {
+            addContact();
         }
-        else System.out.println("Input does not match..");
     }
 
     @Override
