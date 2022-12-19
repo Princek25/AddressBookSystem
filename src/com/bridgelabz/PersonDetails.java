@@ -9,18 +9,7 @@ public class PersonDetails {
     private int zip;
     private long phoneNumber;
 
-    public PersonDetails(String firstName, String lastName, String state, String city, String email, int zip, long phoneNumber) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.state = state;
-        this.city = city;
-        this.email = email;
-        this.zip = zip;
-        this.phoneNumber = phoneNumber;
-    }
-
     public PersonDetails() {
-
     }
 
     public String getFirstName() {
